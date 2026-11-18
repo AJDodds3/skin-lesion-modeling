@@ -1,0 +1,7 @@
+diagnosis,images,majority_class_recall,missingness_only_recall
+ACK,730,0.0,0.6232876712328768
+BCC,845,1.0,0.9881656804733728
+MEL,52,0.0,0.0
+NEV,244,0.0,0.004098360655737705
+SCC,192,0.0,0.0
+SEK,235,0.0,0.0

@@ -1,0 +1,89 @@
+Running notebook cell 1
+2298 matched images and 1373 patients
+            images
+diagnostic        
+ACK            730
+BCC            845
+MEL             52
+NEV            244
+SCC            192
+SEK            235
+Running notebook cell 2
+Loaded cached ResNet-18 features.
+Fold 1: 1838 training images, 460 held out
+  image_only: loss 1.735 -> 0.752
+  full_metadata: loss 1.712 -> 0.642
+  demographics: loss 1.751 -> 1.222
+  fusion_standard: loss 1.616 -> 0.381
+  fusion_masked: loss 1.639 -> 0.465
+Fold 2: 1838 training images, 460 held out
+  image_only: loss 1.616 -> 0.758
+  full_metadata: loss 1.692 -> 0.597
+  demographics: loss 1.752 -> 1.217
+  fusion_standard: loss 1.561 -> 0.361
+  fusion_masked: loss 1.576 -> 0.472
+Fold 3: 1839 training images, 459 held out
+  image_only: loss 1.693 -> 0.742
+  full_metadata: loss 1.710 -> 0.631
+  demographics: loss 1.745 -> 1.225
+  fusion_standard: loss 1.646 -> 0.370
+  fusion_masked: loss 1.662 -> 0.491
+Fold 4: 1838 training images, 460 held out
+  image_only: loss 1.718 -> 0.773
+  full_metadata: loss 1.677 -> 0.643
+  demographics: loss 1.739 -> 1.217
+  fusion_standard: loss 1.598 -> 0.371
+  fusion_masked: loss 1.617 -> 0.479
+Fold 5: 1839 training images, 459 held out
+  image_only: loss 1.675 -> 0.785
+  full_metadata: loss 1.735 -> 0.620
+  demographics: loss 1.762 -> 1.203
+  fusion_standard: loss 1.686 -> 0.377
+  fusion_masked: loss 1.702 -> 0.492
+metric              balanced_accuracy  macro_f1
+condition                                      
+demographics                    0.458     0.333
+full_metadata                   0.665     0.607
+fusion_masked_0                 0.701     0.675
+fusion_masked_25                0.665     0.651
+fusion_masked_50                0.611     0.593
+fusion_standard_0               0.694     0.680
+fusion_standard_25              0.593     0.576
+fusion_standard_50              0.455     0.399
+image_only                      0.533     0.510
+majority_class                  0.167     0.090
+missingness_only                0.269     0.219
+Running notebook cell 3
+                    estimate  ci_low  ci_high
+condition                                    
+majority_class         0.167   0.167    0.167
+missingness_only       0.269   0.261    0.277
+image_only             0.533   0.501    0.567
+full_metadata          0.665   0.628    0.698
+demographics           0.458   0.422    0.496
+fusion_standard_0      0.694   0.663    0.726
+fusion_masked_0        0.701   0.670    0.729
+fusion_standard_25     0.593   0.562    0.623
+fusion_masked_25       0.665   0.633    0.696
+fusion_standard_50     0.455   0.433    0.477
+fusion_masked_50       0.611   0.577    0.643
+                  comparison             metric  difference  ci_low  ci_high
+0    missingness_vs_majority  balanced_accuracy       0.103   0.094    0.110
+1    missingness_vs_majority           macro_f1       0.130   0.121    0.138
+2    masked_minus_standard_0  balanced_accuracy       0.006  -0.010    0.025
+3    masked_minus_standard_0           macro_f1      -0.006  -0.021    0.010
+4   masked_minus_standard_25  balanced_accuracy       0.072   0.048    0.097
+5   masked_minus_standard_25           macro_f1       0.075   0.052    0.100
+6            smaller_drop_25  balanced_accuracy       0.066   0.038    0.094
+7            smaller_drop_25           macro_f1       0.081   0.055    0.107
+8   masked_minus_standard_50  balanced_accuracy       0.156   0.125    0.186
+9   masked_minus_standard_50           macro_f1       0.194   0.159    0.225
+10           smaller_drop_50  balanced_accuracy       0.149   0.113    0.185
+11           smaller_drop_50           macro_f1       0.199   0.161    0.234
+Running notebook cell 4
+   fold diagnostic image_only fusion_standard_50 fusion_masked_50
+0     2        NEV        NEV                NEV              NEV
+1     5        BCC        ACK                ACK              BCC
+2     5        ACK        ACK                ACK              ACK
+3     5        ACK        BCC                ACK              ACK
+4     2        BCC        SCC                SEK              SCC
